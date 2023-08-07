@@ -18,8 +18,8 @@ class ProjectViewSet(viewsets.ModelViewSet):
             print("No project zip file")
             message = "No project zip file"
         else:
-            with open(f"assets/files/project-{project_zip.name}", "wb") as f:
-                f.write(project_zip.read())
+            """ with open(f"assets/files/project-{project_zip.name}", "wb") as f:
+                f.write(project_zip.read()) """
             message = "Zip file uploaded"
         serializer.save()
         return Response(data={"message": message}, status=status.HTTP_201_CREATED)
